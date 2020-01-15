@@ -1,0 +1,25 @@
+// <- this is how comments will be denoted per line
+/*
+	alternatively, anything in between these 
+	symbols will be marked as comments
+*/
+
+int main(int argc, char* argv[]){		//an example of functionDef
+	int test1 = 5;
+	int test2 = test1 * 2;
+	if(test1 < test2){					//ifStatement
+		test1 = test1 * 5;
+	}
+	else{								//optElse
+		test1 = test2 / 2;
+	}
+	while(test2 < test1){				//whileLoop
+		test2 = test2 * 2;
+	}
+	for(int x = 0, x < test1, x++){	//forLoop
+		print("This is harder than I thought...\n");	//print
+	}
+
+	print("Final result: test1 = %d, test2 %d\n", test1, test2);	//print with optPrint
+
+}

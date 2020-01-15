@@ -1,0 +1,11 @@
+//testing the comment function
+
+
+function main(){
+	
+	int x = 5 + 3;
+	int y = [3,4,5];
+
+
+	return 0;
+}

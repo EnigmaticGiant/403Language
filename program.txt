@@ -1,0 +1,57 @@
+// <- this is how comments will be denoted per line
+/*
+	alternatively, anything in between these 
+	symbols will be marked as comments
+*/
+
+struct structure{						//structDef
+	char *name;
+	int number;
+	structure anotherStruct;	
+};
+
+structure newStruct(){
+	structure *x = malloc(sizeof(structure));
+	x.name = "Titus";					//using the structVarSub
+	x.number = 1;
+	x.anotherStruct = NULL;
+	return x;
+}
+
+void testCall(int nothing, int nil){
+	print("Testing the function call\n");
+}
+
+int main(int argc, char* argv[])		//functionDef
+
+{										//start of block
+
+	int test1 = 5;						// varDef with optInit
+	int test2 = test1 * 2;
+	int test3;							//varDef
+	test3 = 5 * (9 + (2) / 4);			//utilizing the optExpressionList
+	if(test1 < test2){					//ifStatement
+		test1 = test1 * 5;
+	}
+	else if(test1 > test2){				//optElse
+		test2 = test2 * 10;
+	}
+	else{								//optElse
+		test1 = test2 / 2;
+	}
+	while(test2 < test1){				//whileLoop
+		test2 = test2 * 2;
+	}
+	for(int x = 0, x < test1, x++){	//forLoop
+		print("This is harder than I thought...\n");	//print
+	}
+
+	print("Final result: test1 = %d, test2 %d\n", test1, test2);	//print with optPrint
+
+	testCall(test3, test2);
+
+	structure blah = newStruct();
+
+	return 0;
+
+}										//end of block
