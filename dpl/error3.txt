@@ -1,0 +1,7 @@
+function main(){
+	
+	println("Demonstrating syntax errors occurring when parsing the tree");
+
+	var x  = (4 + 5, .02);
+
+}

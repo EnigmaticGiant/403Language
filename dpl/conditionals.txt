@@ -1,0 +1,26 @@
+function conditional(var x, var y){
+	if(x < y){
+		println("If condition reached: x is less than y");
+	}
+	else if(x > y){
+		println("If else condition reached: x is greater than y");
+	}
+	else{
+		println("Else condition reached: x is equal to y");
+	}
+}
+
+
+function main(){
+	var x = 10;
+	var y = 50;
+	conditional(x, y);
+	println();
+
+	x = x * x;
+	conditional(x, y);
+	println();
+
+	x = x / 2;
+	conditional(x, y);
+}

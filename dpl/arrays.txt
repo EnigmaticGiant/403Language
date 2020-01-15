@@ -1,0 +1,25 @@
+function main(){
+	var array = newArray(10);
+	var loop = 0;
+	var value = 0;
+	while(loop < 10){
+		println("inserting ", value * 2, " into index ", loop, " of the array");
+		setArray(array, loop, value * 2);
+		value = value + 1;
+		loop = loop + 1;
+	}
+
+	println();
+	println("the value at index ", 5, " is ", getArray(array, 5));
+	println();
+
+	println("multiplying the sum of indexes 4 and 8 by index 3");
+	var result = getArray(array, 4) + getArray(array, 8);
+	result = result * getArray(array, 3);
+	println("result: ", result);
+	println();
+
+	setArray(array, 2, "rAnDoM StRiNg");
+	println("replaced the value at index 2 with ", getArray(array, 2));
+
+}

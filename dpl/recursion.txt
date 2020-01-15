@@ -1,0 +1,12 @@
+function recursion(var x){
+	while(x < 20){
+		println("Recursive function: x is currently: ", x);
+		x = x *2;
+		recursion(x);
+	}
+}
+
+function main(){
+	var num = recursion(2);
+	println(num);
+}

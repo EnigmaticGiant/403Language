@@ -1,0 +1,5 @@
+This a currently completed, but unfinished version of my programming language, now called OOPS, or Object Oriented Programming Software. While unfinished, this language should be able to handle all basic necessities for a language, as well as some more advanced scenarios.
+
+OOPS currently only accepts integer a string type values, and every variable type is represented by "var". Ever variable must be initialized in some form; for example 'var x;' will not work, but 'var x = 0;' will. This is to avoid confusing the system when looking for the value of a variable. 
+
+OOPS can also handle nested functions, as well as lambda, or anonymous, functions. It is important to note that lambda functions are considered as a unary, and therefore part of an expression. THis means that it must end with the endline function, unlike other function definitions.

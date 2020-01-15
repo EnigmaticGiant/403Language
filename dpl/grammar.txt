@@ -1,0 +1,105 @@
+unary				: NUMBER
+					| VARIABLE
+					| OPEN_PAREN expression CLOSE_PAREN
+					| MINUS NUMBER
+					| VARIABLE OPEN_PAREN optExpressionList CLOSE_PAREN
+					| LAMBDA OPAREN optParamList CPAREN block
+					| OPEN_BRACK optionalList CLOSE_BRACK
+
+operator			: PLUS
+					| TIMES
+					| PERCENT
+					| DIVIDE
+					| MINUS
+					| ASSIGN
+					| DOT
+					| GREAT_THAN
+					| LESS_THAN
+
+optExpressionList	: expressionList
+					| *empty*
+
+experessionList		: expression
+					| expression COMMA expressionList
+
+expression			: unary
+					| unary operator expression
+					| unary operator operator
+
+
+list				: item
+					| item COMMA list
+					| *empty*
+
+item 				: unary
+
+
+optionalList		: list
+					| *empty*
+
+ifStatement			: IF OPEN_PAREN expression CLOSE_PAREN block optElse
+
+optElse				: ELSE block
+					: ELSE ifStatement
+					| *empty*
+
+whileLoop 			: WHILE OPEN_PAREN expression CLOSE_PAREN block
+
+block 				: OPEN_BRACE statements CLOSE_BRACE
+
+statements 			: statement
+					| statement statements
+
+statement			: expression endLine
+					| ifStatment
+					| whileLoop
+					| varDef
+					| functDef
+					| return
+					| print
+					| structDef
+
+return				: RETURN expression endLine
+
+varDef				: VAR_TYPE VARIABLE optInit endLine
+
+optInit 			: ASSIGN expression
+					| *empty*
+
+functionDef 		: FUNCTION VARIABLE OPEN_PAREN optParamList CLOSE_PAREN block endLine
+
+optParamList		: paramList
+					| *empty*
+
+paramList 			: VAR_TYPE VARIABLE
+					| VAR_TYPE VARIABLE COMMA paramList
+
+
+comments			: BACK_SLASH BACK_SLASH words
+					| BACK_SLASH TIMES words TIMES BACK_SLASH
+
+words 				: WORD
+					| WORD words
+
+structDef			: STRUCT VARIABLE block endLine
+
+structVar 			: VAR_TYPE VARIABLE endLine structVar
+					| *empty* 
+
+endLine				: SEMICOLON
+
+forLoop				: FOR OPEN_PAREN expression COMMA expression COMMA expression CLOSE_PAREN block
+
+structAtt			: VARIABLE DOT VARIABLE
+
+print				: PRINT OPEN_PAREN  optPrint CLOSE_PAREN endLine
+
+optPrint 			: COMMA unary optPrint
+					| *empty*
+
+program				: def
+					| def program
+
+def 				:varDef
+					|functDef
+					|structDef

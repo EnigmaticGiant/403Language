@@ -1,0 +1,6 @@
+function main(){
+	println("Demonstrating the bad number syntax error");
+
+	var x = 4.54.77;
+	println("Bad number: ", x);
+}

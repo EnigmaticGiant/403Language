@@ -1,0 +1,8 @@
+function main(){
+	var x = 5;
+	var y = "Hello";
+	println("Attempting to find the values of x, y, and z");
+	println("The value of x is ", x);
+	println("The value of y is ", y);
+	println("The value of z is ", z);
+}

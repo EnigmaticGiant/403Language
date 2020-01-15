@@ -1,0 +1,22 @@
+function twice(var x){
+	x = x * 2;
+}
+
+function thrice(var x){
+	x = x * 3;
+}
+
+function half(var x){
+	x = x / 2;
+}
+
+function main(){
+	var x = 5;
+	println("The original value is ", x);
+	x = twice(x);
+	println("The doubled value is ", x);
+	x = thrice(x);
+	println("Triple that, and the value is then ", x);
+	var y = half(x);
+	println("Half that, and the value is ", y);
+}

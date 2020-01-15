@@ -1,0 +1,12 @@
+function iteration(var x){
+	while(x < 100){
+		println("Iterative loop: the value x is currently ", x);
+		x = x *2;
+	}
+	println("Iterative loop has ended. Final Value: ", x);
+}
+
+function main(){
+	var start = 3;
+	iteration(start);
+}

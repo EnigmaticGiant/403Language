@@ -1,0 +1,22 @@
+function g(var x){
+	lambda (var z){
+		x = x * z;
+	};
+}
+
+function f(var x){
+    lambda (var y){ 
+    	x = x + y; 
+    };
+    x = g(x);
+}
+
+
+function main(){
+	var a = f(3);
+	var b = f(11);
+
+	println("a(5) is ",a(5));      ~~ should be 15
+	println("b(6) is ",b(6));      ~~ should be 66
+	println("a(10) is ",a(10));    ~~ should be 150
+}

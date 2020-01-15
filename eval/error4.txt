@@ -1,0 +1,9 @@
+function main(){
+	var x = 100;
+	var y = "Crazy String";
+
+	var result = x / y;
+
+	println("trying to divide ", x, " and ", y);
+
+}

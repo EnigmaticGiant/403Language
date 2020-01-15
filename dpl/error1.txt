@@ -1,0 +1,7 @@
+function main(){
+	println("Demonstrating an unknwown lexical error");
+
+	var number = 5 + 10 $ 2;
+	println(number);
+
+}
